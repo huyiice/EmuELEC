@@ -1,0 +1,14 @@
+name: 编译 Emuelec 固件
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: 编译 Emuelec 固件
+        run: |
+          echo 开始编译固件
+          PROJECT=Amlogic-ce DEVICE=Amlogic-ng ARCH=aarch64 DISTRO=EmuELEC make image
