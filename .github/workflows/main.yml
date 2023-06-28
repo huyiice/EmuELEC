@@ -11,4 +11,7 @@ jobs:
       - name: 编译 Emuelec 固件
         run: |
           echo 开始编译固件
+          sudo apt-get update -y
+          sudo apt-get full-upgrade -y
+          sudo apt install -y tzdata xfonts-utils lzop 
           PROJECT=Amlogic-ce DEVICE=Amlogic-ng ARCH=aarch64 DISTRO=EmuELEC make image
